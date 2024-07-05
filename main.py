@@ -84,6 +84,8 @@ while True:
         rightEyeHull = cv2.convexHull(rightEye)
         cv2.drawContours(frame, [leftEyeHull], -1, (0, 255, 0), 1)
         cv2.drawContours(frame, [rightEyeHull], -1, (0, 255, 0), 1)
+        cv2.putText(frame, "EAR: {:.2f}".format(ear), (350, 20), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
         if ear < EYE_AR_THRESH:
             COUNTER += 1
